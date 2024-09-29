@@ -1,0 +1,183 @@
+@charset "utf-8";
+/* CSS Document */
+/**
+title: base layout for 研招推免招生  
+author: os
+label: IE6,IE7,IE8-IE11,FF等全部常规浏览器
+descript: 本框架实现：在顶部固定（static）header，可用于用户ui的兼容框架。 特点：footer永远在底部，即使content内容较短；请注意docytpe的写法。
+**/
+
+:root {
+    --page-padding: 10%;
+}
+body {
+	border: 0;
+	min-width: 1000px;
+	height: 100vh;
+	overflow: hidden;
+	background-color:#fff;
+	padding: 36px calc(var(--page-padding) - 12px) 0px calc(var(--page-padding) - 12px) !important;
+}
+.head-wrapper {
+	text-align: left;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	z-index: 9;
+	height: 80px;
+	display: none;
+}
+.main-wrapper {
+	text-align: left;
+	position: relative;
+	min-height: 100%;
+
+}
+.foot-wrapper {
+	clear: both;
+	position: relative;
+	z-index: 10;
+	text-align: left;
+	height: 40px;
+	margin-top: -40px;
+	overflow: hidden;
+}
+
+.container {
+	padding-bottom: 40px;
+}
+/**ie6 修复**/
+* html, * html body {
+	background-image: url(about:blank);
+	background-attachment: fixed;
+} /* 修正IE6振动bug */
+* html, * html .main-wrapper {
+	height: 100%;
+}
+/*wrapper styles */
+.fixed .main-wrapper, .fixed .foot-wrapper {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.liquid .main-wrapper, .liquid .foot-wrapper {
+	width: 100%;
+}
+
+/**
+title: sub layout for 研招推免招生  
+author: os
+label: 兼容IE6,IE7,IE8-IE11,FF等全部常规浏览器
+descript: CSS实现两侧同一高度。
+**/
+
+.header{ clear:both;}	
+/* column container */
+	.colmask {
+		position:relative;		/* This fixes the IE7 overflow hidden bug and stops the layout jumping out of place */
+	    clear:both;
+	    float:left;
+        width:100%;			/* width of whole page */
+		overflow:hidden;
+		/* This chops off any overhanging divs */
+	}
+	/* 2 column left menu settings */
+	.leftbg { }
+	.rightbg{ background:#fff;}
+    .colright {
+        float:left;
+        width:200%;
+		position:relative;
+		left:200px;
+    }
+     .col1wrap {
+	    float:right;
+	    width:50%;
+	    position:relative;
+	    right:200px;
+	    padding-bottom:1em;
+	}
+	 .col1 {
+        margin:0 15px 0 200px;
+	    position:relative;
+	    right:100%;
+	    overflow:hidden;
+	}
+     .col2 {
+        float:left;
+        width:170px;
+        position:relative;
+        right:200px;
+    }
+	
+	
+	#loader {
+		display: none;
+		background-color: #ccc;
+		filter: alpha(opacity=80);
+		opacity: 0.8;
+		height: 100%;
+		font-size: 20px;
+		padding-top: 100px;
+		text-align: center;
+		position: relative;
+		width: 100%;
+		z-index: 9999;
+		color: #af3d19;
+	}
+	.ui-tipbox-title ul.errorMessage {
+		list-style: none;
+	}
+	body{
+		word-break: break-all;
+		word-wrap: break-word;
+	}
+
+	.zy-title {
+        font-size: 16px;
+        color: #50aac2;
+        font-weight: bold;
+      }
+      
+      .zy-title a {
+        color: #50aac2;
+      }
+      
+      .badge-important {
+        background: #c90;
+      }
+      
+      .badge-success {
+        background: #82af6f;
+      }
+      
+      a.tip-important {
+        color: #c90;
+        border-bottom: dashed 1px #c90;
+        font-size: 14px;
+      }
+      
+      a.tip-success {
+        color: #82af6f;
+        border-bottom: dashed 1px #82af6f;
+        font-size: 14px;
+      }
+      
+      a.tip-important:hover,a.tip-success:hover {
+        border-bottom: none;
+        text-decoration: none;
+      }
+      
+      #ui-dlist .ui-dlist-tit {
+        width: 39%;
+        font-size: 14px;
+      }
+      
+      #ui-dlist .ui-dlist-det {
+        width: 59%;
+        font-size: 14px;
+      }
+      
+      .ui-tiptext-container-message {
+        margin: 10px 25px 20px 25px;
+      }
